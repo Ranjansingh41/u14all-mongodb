@@ -14,8 +14,8 @@ build:
     pull: true
     
   ci:
-    - mongod --version
-    - /var/lib/neo4j/bin/neo4j -version
+    - mongod -version
+    - /var/lib/neo4j/bin/neo4j version
     - dpkg -s rabbitmq-server
     - redis-server --version
     
