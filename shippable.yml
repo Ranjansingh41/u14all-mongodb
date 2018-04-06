@@ -1,0 +1,14 @@
+jobs:
+ - name: u14all
+   type: runSh
+   steps:
+     - TASK:
+         runtime:
+           options:
+             imageName: "drydock/u14all"
+             imageTag: master
+         script:
+        - mongod -version
+        - Neo4j -version
+        - rabbitmq -version
+        - redis -version
