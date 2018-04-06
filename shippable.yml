@@ -14,9 +14,9 @@ build:
     pull: true
     
   ci:
-  - mongodb -version
-  - neo4j -version
-  - rabbitmq -version
-  - redis -version
+    - mongodb -version
+    - neo4j -version
+    - rabbitmq -version
+    - redis -version
     
 
