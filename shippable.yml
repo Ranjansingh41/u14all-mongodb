@@ -1,14 +1,22 @@
-jobs:
- - name: u14all
-   type: runSh
-   steps:
-     - TASK:
-         runtime:
-           options:
-             imageName: "drydock/u14all"
-             imageTag: master
-         script:
-        - mongod -version
-        - Neo4j -version
-        - rabbitmq -version
-        - redis -version
+language: none
+
+services:
+  - mongodb
+  - neo4j
+  - rabbitmq
+  - redis
+
+
+build:
+  pre_ci_boot:
+    image_name: drydock/u14all
+    image_tag: master
+    pull: true
+    
+  ci:
+  - mongodb -version
+  - neo4j -version
+  - rabbitmq -version
+  - redis -version
+    
+
